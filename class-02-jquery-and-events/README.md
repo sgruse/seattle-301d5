@@ -12,3 +12,9 @@ We will use jQuery's event handling APIs to make this happen, rather than the va
  - W3C RFC: http://www.w3.org/TR/DOM-Level-2-Events/events.html
  - Color selection help: https://coolors.co
  - Color selection help: http://paletton.com
+
+## Class Videos
+ - [Part 1 of 4](https://youtu.be/aL0e5dB9yAs)
+ - [Part 2 of 4](https://youtu.be/HH80W0QzMo4)
+ - [Part 3 of 4](https://youtu.be/hbSmubiWSI4)
+ - [Part 4 of 4](https://youtu.be/lUlIzi1x4-E)
