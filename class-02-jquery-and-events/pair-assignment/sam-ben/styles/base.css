@@ -1,0 +1,49 @@
+* {
+  border-radius: 20px;
+  padding: 5px;
+  margin: 10px;
+}
+
+body {
+  background-color: #b2cecf;
+  color: black;
+  line-height: 1.5;
+  font-size: 100%;
+  color: #313131;
+}
+img {
+  width: 20%;
+  height: auto;
+  box-shadow: 5px 5px 5px #239489;
+}
+
+hr {
+  margin: 1em;
+  width: 80%;
+  background: #222930
+}
+
+/*TEXT STYLES
+=======================================*/
+p {
+  font-size: 1em;
+}
+
+address {
+  display: inline-block;
+}
+
+/*LINK STYLES
+=======================================*/
+
+a, a:link, a:active {
+  color: #777;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: #d02552;
+}
+
+a:visited {
+}
