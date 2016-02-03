@@ -14,7 +14,7 @@ We will use jQuery's event handling APIs to make this happen, rather than the va
  - Color selection help: http://paletton.com
 
 ## Class Videos
- - [Part 1 of 4](https://youtu.be/aL0e5dB9yAs)
- - [Part 2 of 4](https://youtu.be/HH80W0QzMo4)
- - [Part 3 of 4](https://youtu.be/hbSmubiWSI4)
- - [Part 4 of 4](https://youtu.be/lUlIzi1x4-E)
+ - [Part 1 of 4](https://youtu.be/CXiwNCddxKY)
+ - [Part 2 of 4](https://youtu.be/aPQxZ6e3jb8)
+ - [Part 3 of 4](https://youtu.be/ocztuOyld_k)
+ - [Part 4 of 4](https://youtu.be/iuwCfGwFEuU)
