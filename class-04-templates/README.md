@@ -17,3 +17,9 @@ As we get more sophisticated, this is a good time to ensure our CSS styles are w
  - [Practical Topography Site](practicaltypography.com/)
  - [A More Modern Scale for Web Typography via typecast.com](typecast.com/blog/a-more-modern-scale-for-web-typography)
  - [Type Scale Tool via type-scale.com](type-scale.com)
+
+## Class Videos
+ - [Part 1 of 4]()
+ - [Part 2 of 4]()
+ - [Part 3 of 4]()
+ - [Part 4 of 4]()
