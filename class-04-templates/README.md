@@ -12,7 +12,7 @@ As we get more sophisticated, this is a good time to ensure our CSS styles are w
  - [Type Scale Tool via type-scale.com](type-scale.com)
 
 ## Class Videos
- - [Part 1 of 4]()
+ - [Part 1 of 4](https://youtu.be/AYLS3TGe9hk)
  - [Part 2 of 4]()
  - [Part 3 of 4]()
  - [Part 4 of 4]()
