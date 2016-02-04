@@ -13,5 +13,5 @@ As we get more sophisticated, this is a good time to ensure our CSS styles are w
 
 ## Class Videos
  - [Part 1 of 3](https://youtu.be/yJa8ry3duOw)
- - [Part 2 of 3](https://youtu.be/UJlAvnaTKlo)
- - [Part 3 of 3]()
+ - [Part 2 of 3](https://youtu.be/F8CrcX_c9XQ)
+ - [Part 3 of 3](https://youtu.be/NZMP3gZBVNA)
