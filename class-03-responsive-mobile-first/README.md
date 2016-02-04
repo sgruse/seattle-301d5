@@ -16,3 +16,4 @@ Then, see how you can apply these same ideas in your portfolio!
  - [Part 2 of 4](https://youtu.be/AQwUD_r9PM0)
  - [Part 3 of 4](https://youtu.be/iZKS_f6aCC0)
  - [Part 4 of 4](https://youtu.be/HrsPOtNQ71s)
+ - [Demo Video by Brook & Alex](https://www.youtube.com/watch?v=2t4E_tc8TKM)
