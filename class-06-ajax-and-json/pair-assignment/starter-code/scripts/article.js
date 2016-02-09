@@ -7,12 +7,15 @@ function Article (opts) {
   this.publishedOn = opts.publishedOn;
 }
 
+// Article.js page acts like the controller in the MVC model. articleView.js handles all of the DOM traversing and appends.  Breaking all of this up is part of the concepts of MVC.
+
 // DONE: Instead of a global `articles = []` array, let's track this list of all articles directly on the
 // constructor function. Note: it is NOT on the prototype. In JavaScript, functions are themselves
 // objects, which means we can add properties/values to them at any time. In this case, we have
 // a key/value pair to track, that relates to ALL of the Article objects, so it does not belong on
 // the prototype, as that would only be relevant to a single instantiated Article.
 Article.all = [];
+// this array is being filled and appended on the articleView.js page inside the articleView.initIndexPage();
 
 Article.prototype.toHtml = function() {
   var template = Handlebars.compile($('#article-template').text());
@@ -48,15 +51,41 @@ Article.fetchAll = function() {
     // When rawData is already in localStorage,
     // we can load it with the .loadAll function above,
     // and then render the index page (using the proper method on the articleView object).
-    Article.loadAll(//TODO: What do we pass in here to the .loadAll function?
-    );
-    articleView.someFunctionToCall; //TODO: What method do we call to render the index page?
+
+$.ajax({
+  type: 'HEAD',
+  url: '/data/hackerIpsum.jason',
+  success: function(data, message, xhr) {
+    console.log(xhr);
+    var eTag = xhr.getResponseHeader('eTag');
+    if(!localStorage.eTag || eTag !== localStorage.eTag){
+        localStorage.eTag = eTag;
+        Article.getAll();
+        } else {
+        Article.loadAll(JSON.parse(localStorage.rawData));
+        articleView.initIndexPage();
+      }
+    }
+  });
+
   } else {
+  Article.getAll();
+  }
+};
+
+Article.getAll = function() {
+  $.getJSON('/data/hackerIpsum.json', function(rawData){
+    Article.loadAll(rawData);
+    localStorage.rawData = JSON.stringify(rawData);
+    articleView.initIndexPage();
+  });
+};
+// Blocking code inside an asynchronous function.  Just taking data and doing something with it
+
+    //TODO: What do we pass in here to the .loadAll function?
+    //TODO: What method do we call to render the index page?
     // TODO: When we don't already have the rawData,
     // we need to retrieve the JSON file from the server with AJAX (which jQuery method is best for this?),
     // cache it in localStorage so we can skip the server call next time,
     // then load all the data into Article.all with the .loadAll function above,
     // and then render the index page.
-
-  }
-}
