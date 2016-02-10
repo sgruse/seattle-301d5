@@ -1,3 +1,5 @@
+// this is what's happening under the hood that will be run in html5sql.js
+
 (function(module) {
   var webDB = {};
 
