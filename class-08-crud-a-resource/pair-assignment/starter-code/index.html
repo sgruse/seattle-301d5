@@ -91,6 +91,8 @@
       // DONE: Ensure that a database table for articles exists, every time we load the page.
       Article.createTable();
       Article.fetchAll(articleView.initIndexPage);
+      // passes in articleView.initIndexPage as agruments to the fetchAll function.
+      // Once inside the fetchAll function, the function is ran and then uses (next) to run the next function inside the articleView.initIndexPage function.
     </script>
   </body>
 </html>

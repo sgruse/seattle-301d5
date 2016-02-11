@@ -113,6 +113,11 @@
   // we need to retrieve the JSON and process it.
   // If the DB has data already, we'll load up the data (sorted!), and then hand off control to the View.
   // We are going to go have remember the idea of asynchronus programming, use the resources above.  The .init method creates the connection to the database, the .DB method creates the query (in three different ways).
+
+  //Once inside the fetchAll function webDB selects everything from the table 'articles' (database) which was created using the createTable function, called on the index.html.  The if statement says if there is content inside the table rows than run the Article.loadAll function which will run the map.method on every object in the table and fill the Article.all array at the top of page, once this array is filled, next(), will be called which runs the functions inside the article.View.js function, this function will do a forEach on every object inside the Article.all array (which is our data), and append this data to our html document as well as populate all of the filters and run the other functions.
+
+  //The else says if there is no data inside of the database, GET the json file represented by (rawData). Then run the forEach method on rawData, creating an array of objects stored inside of the variable article.  Now that variable article is an array we can run the insertRecord() method off of it on line 136.  This inputs rawData into our database table which we can then use webDB.execute to select all id's from 'article' (everything stored inside of the table is given a unique ID), and then run the Article.loadAll function which will fill the Article.All array and finally run the articleView.initIndexPage which fills the rest of the page.  
+
   Article.fetchAll = function(next) {
 
     webDB.execute('SELECT * FROM articles', function(rows) {
@@ -122,7 +127,6 @@
         next();
 
       } else {
-        console.log('cat');
         $.getJSON('/data/hackerIpsum.json', function(rawData) {
           // Cache the json, so we don't need to request it next time:
           rawData.forEach(function(item) {
@@ -130,8 +134,6 @@
             // Cache the newly-instantiated article in DB:
             console.log(article);
             article.insertRecord();
-
-
           });
           // Now get ALL the records out the DB, with their database IDs:
           webDB.execute('SELECT id FROM articles', function(rows) {
