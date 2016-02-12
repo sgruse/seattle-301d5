@@ -66,8 +66,11 @@
         }
       ],
       callback
+      // callback isn't being used in this case unless we call it "callback()", if we do it will call the function passed into insertRecord as an argument.
     );
   };
+
+  // webDB.execute accepts and arry of OBJECTS.
 
   // : Delete an article instance from the database:
   // Similar to insert, we must create a query for delete and update record similar to insert.
@@ -97,7 +100,7 @@
       ],
       function(result) {                                                //CALLBACK//
         console.log('Successfully set up the articles table.', result);
-        if (callback) callback();
+          if (callback) callback();
       }
     );
   };
@@ -116,11 +119,11 @@
 
   //Once inside the fetchAll function webDB selects everything from the table 'articles' (database) which was created using the createTable function, called on the index.html.  The if statement says if there is content inside the table rows than run the Article.loadAll function which will run the map.method on every object in the table and fill the Article.all array at the top of page, once this array is filled, next(), will be called which runs the functions inside the article.View.js function, this function will do a forEach on every object inside the Article.all array (which is our data), and append this data to our html document as well as populate all of the filters and run the other functions.
 
-  //The else says if there is no data inside of the database, GET the json file represented by (rawData). Then run the forEach method on rawData, creating an array of objects stored inside of the variable article.  Now that variable article is an array we can run the insertRecord() method off of it on line 136.  This inputs rawData into our database table which we can then use webDB.execute to select all id's from 'article' (everything stored inside of the table is given a unique ID), and then run the Article.loadAll function which will fill the Article.All array and finally run the articleView.initIndexPage which fills the rest of the page.  
+  //The else says if there is no data inside of the database, GET the json file represented by (rawData). Then run the forEach method on rawData, creating an array of objects stored inside of the variable article.  Now that variable article is an array we can run the insertRecord() method off of it on line 136.  This inputs rawData into our database table which we can then use webDB.execute to select all id's from 'article' (everything stored inside of the table is given a unique ID), and then run the Article.loadAll function which will fill the Article.All array and finally run the articleView.initIndexPage which fills the rest of the page.
 
   Article.fetchAll = function(next) {
 
-    webDB.execute('SELECT * FROM articles', function(rows) {
+    webDB.execute('SELECT * FROM articles ORDER BY publishedOn DESC', function(rows) {
 
       if (rows.length) {
         Article.loadAll(rows);
@@ -140,8 +143,6 @@
             // Now instanitate those rows with the .loadAll function, and pass control to the view.
             Article.loadAll(rows);
             next();
-
-
           });
         });
       }
@@ -193,6 +194,8 @@
       Authors: Article.allAuthors(),
     };
   }
+
+  // Everything wrapped in an IIFE (immidiatley invoked functioning expression) makes all the Article objects private to this scope.  Access to all of these things on the window.  Everything inside this module is connected to the Article object/constructor/prototype.  Anything other functions or variables must be connected to 'Article' in order to be accessed by the window module.
 
   module.Article = Article;
 })(window);

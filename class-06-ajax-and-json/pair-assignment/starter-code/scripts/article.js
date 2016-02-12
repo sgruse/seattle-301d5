@@ -54,7 +54,7 @@ Article.fetchAll = function() {
 
 $.ajax({
   type: 'HEAD',
-  url: '/data/hackerIpsum.jason',
+  url: '/data/hackerIpsum.json',
   success: function(data, message, xhr) {
     console.log(xhr);
     var eTag = xhr.getResponseHeader('eTag');
