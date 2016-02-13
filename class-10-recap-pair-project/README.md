@@ -8,3 +8,5 @@
  - [Part 2 of 4](https://youtu.be/jjzLc6l5Jv8)
  - [Part 3 of 4](https://youtu.be/IPmSqQt6HfM)
  - [Part 4 of 4](https://youtu.be/ikIjMKwUe0E)
+ - [Afternoon CSS with Brian 1 of 2] (https://youtu.be/vpg9L-nDjD0)
+ - [Afternoon CSS with Brian 2 of 2] (https://youtu.be/L0AjwB7gZBI)
