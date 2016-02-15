@@ -83,14 +83,24 @@
     <script src="/vendor/scripts/handlebars.js"></script>
     <script src="/vendor/scripts/marked.js"></script>
     <script src="/vendor/scripts/html5sql.js"></script>
-    <script src="/scripts/webdb.js"></script>
 
+    <!-- Pulled in page.js -->
+    <script src="/vendor/scripts/page.js"></script>
+
+    <script src="/scripts/webdb.js"></script>
     <script src="/scripts/article.js"></script>
     <script src="/scripts/articleView.js"></script>
 
+    <!-- pulled in our controllers -->
+    <script src="/scripts/articleController.js"></script>
+    <script src="/scripts/aboutController.js"></script>
+
+    <!-- Here we are calling our routes -->
+    <script src="/scripts/routes.js"></script>
+
     <script>
-      Article.createTable();
-      Article.fetchAll(articleView.initIndexPage);
+      // Article.createTable();
+      // Article.fetchAll(articleView.initIndexPage);
     </script>
   </body>
 </html>

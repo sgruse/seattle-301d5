@@ -12,6 +12,7 @@ var proxyGitHub = function(request, response) {
 };
 
 app.get('/github/*', proxyGitHub);
+// you hit a route of /github/(anything else), it will run the proxyGitHub function defined above.
 
 app.use(express.static('./'));
 

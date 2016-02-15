@@ -50,14 +50,17 @@
 
   // TODO: Once the routes are handling / and /about, we can delete this handleMainNav function. YESSSS!
   // Remeber to also remove any calls to this function.
-  articleView.handleMainNav = function() {
-    $('.main-nav').on('click', '.tab', function(e) {
-      $('.tab-content').hide();
-      $('#' + $(this).data('content')).fadeIn();
-    });
+  // We no longer need this method becuase this is being handled through our routes and controllers. And we must delete this in the articleView.initIndexPage();
 
-    $('.main-nav .tab:first').click();
-  };
+
+  // articleView.handleMainNav = function() {
+  //   $('.main-nav').on('click', '.tab', function(e) {
+  //     $('.tab-content').hide();
+  //     $('#' + $(this).data('content')).fadeIn();
+  //   });
+  //
+  //   $('.main-nav .tab:first').click();
+  // };
 
   articleView.setTeasers = function() {
     $('.article-body *:nth-of-type(n+2)').hide();
@@ -112,7 +115,6 @@
     articleView.populateFilters();
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();
-    articleView.handleMainNav();
     articleView.setTeasers();
   };
 
