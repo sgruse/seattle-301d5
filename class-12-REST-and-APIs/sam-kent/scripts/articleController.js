@@ -3,10 +3,19 @@
 
   Article.createTable();
 
-  articlesController.index = function() {
+  articlesController.index = function(ctx, next) {
     Article.fetchAll(articleView.initIndexPage);
 
-    $('#articles').show().siblings().hide();
+    $('#articles').show();
+
+    ctx.handled = true;
+    next();
+  };
+
+  articlesController.exit = function(ctx, next) {
+    $('#articles').hide();
+
+    next();
   };
 
   module.articlesController = articlesController;

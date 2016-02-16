@@ -22,11 +22,10 @@
       console.log(status);
       callback();
     }).fail(function(xhr, status, error){
-      console.log('failed');
+      console.log('github fetch failed');
       console.log(status);
       console.log(error);
     });
-
   };
 
   // DONE: Model method that filters the full collection for repos with a particular attribute.

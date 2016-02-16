@@ -34,6 +34,12 @@
   border-bottom: 1px solid #ccc;
 }
 
+/* since we are using enter/exit with page.js,
+tabs should be hidden by default */
+.tab-content {
+  display: none;
+}
+
 #filters {
   padding: 0;
   list-style: none;
