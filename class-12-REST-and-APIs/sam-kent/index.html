@@ -23,6 +23,11 @@
         <a href="#" class="read-on">Read on &rarr;</a>
       </article>
     </script>
+
+    <script id="repo-template" type="text/x-handlebars-template">
+      <li>{{name}}</li>
+    </script>
+
   </head>
   <body>
     <header class="site-header clearfix">
@@ -82,7 +87,7 @@
     <script src="/scripts/webdb.js"></script>
     <script src="/vendor/scripts/page.js"></script>
 
-    <!-- TODO: Include your secret GitHub token file, which should be gitingore'd,
+    <!-- DONE: Include your secret GitHub token file, which should be gitingore'd,
       therefore recreated in every developer's environment. -->
 
     <script src="/scripts/githubToken.js"></script>
@@ -91,8 +96,11 @@
     <script src="/scripts/article.js"></script>
     <script src="/scripts/articleView.js"></script>
     <script src="/scripts/articleController.js"></script>
+    <!-- repos added -->
+    <script src="/scripts/repo.js"></script>
+    <script src="/scripts/repoView.js"></script>
 
-    <!-- TODO: Be sure to include any new script files: -->
+    <!-- DONE: Be sure to include any new script files: -->
     <script src="/scripts/aboutController.js"></script>
 
     <script src="/scripts/routes.js"></script>

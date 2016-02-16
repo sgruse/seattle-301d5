@@ -4,7 +4,28 @@
   repos.all = [];
 
   repos.requestRepos = function(callback) {
-    // TODO: How would you like to fetch your repos? Don't forget to call the callback.
+    // DONE: How would you like to fetch your repos? Don't forget to call the callback.
+    console.log('cat');
+    $.ajax({
+      url: 'https://api.github.com/users/sgruse/repos',
+      data: {
+        per_page: 5,
+        sort: 'updated',
+      },
+      headers: {
+        Authorization: 'token ' + githubToken,
+      },
+      type: 'GET',
+      dataType: 'json',
+    }).done(function(data, status, xhr){
+      repos.all = data;
+      console.log(status);
+      callback();
+    }).fail(function(xhr, status, error){
+      console.log('failed');
+      console.log(status);
+      console.log(error);
+    });
 
   };
 
