@@ -8,10 +8,12 @@ var proxyGitHub = function(request, response) {
   (requestProxy({
     url: 'https://api.github.com/' + request.params[0],
     headers: { Authorization: 'token ' + process.env.GITHUB_TOKEN }
+    //env variables only live on server, only way to access this is by pinging the url.
   }))(request, response);
 };
 
 app.get('/github/*', proxyGitHub);
+//anytime server is pinged with a request starting with /github/ it will run proxyGitHub() using the env variable(github token).  Proxy github returns an object
 
 app.use(express.static('./'));
 
